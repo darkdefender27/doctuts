@@ -178,10 +178,20 @@ Update the source list
 \begin{Verbatim}[commandchars=\\\{\}]
 user@ubuntu:\PYGZti{}\PYGZdl{}  sudo apt\PYGZhy{}get update
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{1.png}}
+\end{figure}
 
 or
 
 Install Sun Java 6 JDK
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{2.png}}
+\end{figure}
 
 
 \paragraph{Note:}
@@ -210,6 +220,16 @@ We will use a dedicated Hadoop user account for running Hadoop.
 user@ubuntu:\PYGZti{}\PYGZdl{} sudo addgroup hadoop\PYGZus{}group
 user@ubuntu:\PYGZti{}\PYGZdl{} sudo adduser \PYGZhy{}\PYGZhy{}ingroup hadoop\PYGZus{}group hduser1
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{3.png}}
+\end{figure}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{4.png}}
+\end{figure}
 
 This will add the user hduser1 and the group hadoop\_group to the local machine.
 Add hduser1 to the sudo group
@@ -231,6 +251,11 @@ We have to generate an SSH key for the hduser user.
 user@ubuntu:\PYGZti{}\PYGZdl{} su – hduser1
 hduser1@ubuntu:\PYGZti{}\PYGZdl{} ssh\PYGZhy{}keygen \PYGZhy{}t rsa \PYGZhy{}P \PYGZdq{}\PYGZdq{}
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{5.png}}
+\end{figure}
 
 The second line will create an RSA key pair with an empty password.
 
@@ -251,6 +276,11 @@ The step is also needed to save your local machine’s host key fingerprint to t
 \begin{Verbatim}[commandchars=\\\{\}]
 hduser@ubuntu:\PYGZti{}\PYGZdl{} ssh localhost
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{6.png}}
+\end{figure}
 
 If the SSH connection fails, we can try the following (optional):
 \begin{itemize}
@@ -393,6 +423,11 @@ Run the command
 \begin{Verbatim}[commandchars=\\\{\}]
 hduser@ubuntu:\PYGZti{}\PYGZdl{} /usr/local/hadoop/bin/hadoop namenode –format
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{7.png}}
+\end{figure}
 
 
 \subsubsection{Starting your single-node cluster}
@@ -414,6 +449,11 @@ This will startup a Namenode, Datanode, Jobtracker and a Tasktracker on the mach
 \begin{Verbatim}[commandchars=\\\{\}]
 hduser@ubuntu:/usr/local/hadoop\PYGZdl{} jps
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{8.png}}
+\end{figure}
 
 
 \paragraph{Errors:}
@@ -485,6 +525,11 @@ Set the java home path in hadoop-env.sh as well bashrc.
 \subsubsection{From single-node clusters to a multi-node cluster}
 \label{hadoop:from-single-node-clusters-to-a-multi-node-cluster}
 We will build a multi-node cluster merge two or more single-node clusters into one multi-node cluster in which one Ubuntu box will become the designated master but also act as a slave , and the other box will become only a slave.
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{9.png}}
+\end{figure}
 
 
 \subsection{Prerequisites}
@@ -518,6 +563,11 @@ Add the following lines for two node cluster
 \end{Verbatim}
 
 \end{itemize}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{10.png}}
+\end{figure}
 
 
 \subsection{SSH access}
@@ -539,6 +589,13 @@ Add the \href{mailto:hduser@master}{hduser@master} public SSH key using the foll
 hduser@master:\PYGZti{}\PYGZdl{}  ssh\PYGZhy{}copy\PYGZhy{}id \PYGZhy{}i \PYGZdl{}HOME/.ssh/id\PYGZus{}rsa.pub hduser@slave1
 \end{Verbatim}
 
+\end{itemize}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{11.png}}
+\end{figure}
+\begin{itemize}
 \item {} 
 Connect with user hduser from the master to the user account hduser on the slave.
 
@@ -551,6 +608,14 @@ From master to master
 hduser@master:\PYGZti{}\PYGZdl{}  ssh master
 \end{Verbatim}
 
+\end{enumerate}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{12.png}}
+\end{figure}
+\begin{enumerate}
+\setcounter{enumi}{1}
 \item {} 
 From master to slave
 
@@ -559,6 +624,11 @@ hduser@master:\PYGZti{}\PYGZdl{}  ssh slave1
 \end{Verbatim}
 
 \end{enumerate}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{13.png}}
+\end{figure}
 
 
 \subsection{Hadoop}
@@ -587,6 +657,11 @@ Add the following line
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{n}{Master}
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{14.png}}
+\end{figure}
 
 
 \paragraph{conf/slaves}
@@ -595,7 +670,7 @@ This file should be updated on all the nodes as master is also a slave.
 Open the slaves file in the conf directory
 
 \begin{Verbatim}[commandchars=\\\{\}]
-hduser@master/slave :\PYGZti{}\PYGZdl{} /usr/local/hadoop/conf\PYGZdl{} sudo gedit slaves
+hduser@master/slave:\PYGZti{}/usr/local/hadoop/conf\PYGZdl{} sudo gedit slaves
 \end{Verbatim}
 
 Add the following lines
@@ -604,6 +679,11 @@ Add the following lines
 \PYG{n}{Master}
 \PYG{n}{Slave1}
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{15.png}}
+\end{figure}
 
 
 \paragraph{conf/{\color{red}\bfseries{}*}-site.xml (all machines)}
@@ -611,7 +691,7 @@ Add the following lines
 Open this file in the conf directory
 
 \begin{Verbatim}[commandchars=\\\{\}]
-hduser@master:\PYGZti{}\PYGZdl{} /usr/local/hadoop/conf\PYGZdl{} sudo gedit core\PYGZhy{}site.xml
+hduser@master:\PYGZti{}/usr/local/hadoop/conf\PYGZdl{} sudo gedit core\PYGZhy{}site.xml
 \end{Verbatim}
 
 Change the fs.default.name parameter (in conf/core-site.xml), which specifies the NameNode (the HDFS master) host and port.
@@ -629,6 +709,11 @@ conf/core-site.xml (ALL machines .ie. Master as well as slave)
     determine the host, port, etc. for a filesystem.\PYGZlt{}/description\PYGZgt{}
 \PYGZlt{}/property\PYGZgt{}
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{16.png}}
+\end{figure}
 
 
 \paragraph{conf/mapred-site.xml}
@@ -654,6 +739,11 @@ conf/mapred-site.xml (ALL machines)
     \PYGZlt{}/description\PYGZgt{}
 \PYGZlt{}/property\PYGZgt{}
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{17.png}}
+\end{figure}
 
 
 \paragraph{conf/hdfs-site.xml}
@@ -683,6 +773,11 @@ Changes to be made
     \PYGZlt{}/description\PYGZgt{}
 \PYGZlt{}/property\PYGZgt{}
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{18.png}}
+\end{figure}
 
 
 \subsubsection{Formatting the HDFS filesystem via the NameNode}
@@ -690,8 +785,13 @@ Changes to be made
 Format the cluster’s HDFS file system
 
 \begin{Verbatim}[commandchars=\\\{\}]
-hduser@master:\PYGZti{}\PYGZdl{}  /usr/local/hadoop\PYGZdl{} bin/hadoop namenode \PYGZhy{}format
+hduser@master:\PYGZti{}/usr/local/hadoop\PYGZdl{} bin/hadoop namenode \PYGZhy{}format
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{19.png}}
+\end{figure}
 
 
 \subsubsection{Starting the multi-node cluster}
@@ -712,6 +812,11 @@ Cluster is started by running the commnd on master
 hduser@master:\PYGZti{}\PYGZdl{}   /usr/local/hadoop
 hduser@master:\PYGZti{}\PYGZdl{}   bin/start\PYGZhy{}all.sh
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{20.png}}
+\end{figure}
 
 By this command:
 \begin{itemize}
@@ -728,12 +833,22 @@ To check the daemons running , run the following commands
 \begin{Verbatim}[commandchars=\\\{\}]
 hduser@master:\PYGZti{}\PYGZdl{}  jps
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{21.png}}
+\end{figure}
 
 On slave, datanode and jobtracker should run.
 
 \begin{Verbatim}[commandchars=\\\{\}]
-hduser@slave:\PYGZti{}\PYGZdl{}  /usr/local/hadoop\PYGZdl{} jps
+hduser@slave:\PYGZti{}/usr/local/hadoop\PYGZdl{} jps
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{22.png}}
+\end{figure}
 
 
 \subsubsection{Stopping the multi-node cluster}
@@ -741,9 +856,14 @@ hduser@slave:\PYGZti{}\PYGZdl{}  /usr/local/hadoop\PYGZdl{} jps
 To stop the multinode cluster , run the following command on master pc
 
 \begin{Verbatim}[commandchars=\\\{\}]
-hduser@master:\PYGZti{}\PYGZdl{}   /usr/local/hadoop
-hduser@master:\PYGZti{}\PYGZdl{}   bin/stop\PYGZhy{}all.sh
+hduser@master:\PYGZti{}\PYGZdl{} cd /usr/local/hadoop
+hduser@master:\PYGZti{}/usr/local/hadoop\PYGZdl{} bin/stop\PYGZhy{}all.sh
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{23.png}}
+\end{figure}
 
 
 \paragraph{ERROR POINTS:}
@@ -784,6 +904,11 @@ hduser@master:\PYGZti{}\PYGZdl{}  sudo rm \PYGZhy{}Rf /app/hadoop/tmp/*
 \end{itemize}
 
 \end{enumerate}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{24.png}}
+\end{figure}
 
 
 \chapter{HIVE INSTALLATION}
@@ -900,7 +1025,7 @@ user@ubuntu:\PYGZti{}\PYGZdl{}  hive
 Hive shell will prompt:
 
 
-\subsubsection{OUTPUT ::}
+\subsubsection{OUTPUT}
 \label{hive:output}
 Shell will look like
 
@@ -999,6 +1124,11 @@ Sqoop is a tool designed to transfer data between Hadoop and relational database
 You can use Sqoop to import data from a relational database management system (RDBMS) such as MySQL or Oracle into the Hadoop Distributed File System (HDFS), transform the data in Hadoop MapReduce, and then export the data back into an RDBMS. Sqoop automates most of this process, relying on the database to describe the schema for the data to be imported. Sqoop uses MapReduce to import and export the data, which provides parallel operation as well as fault tolerance. This document describes how to get started using Sqoop to move data between databases and Hadoop and provides reference information for the operation of the Sqoop command-line tool suite.
 
 \end{itemize}
+\begin{figure}[htbp]
+\centering
+
+\scalebox{0.500000}{\includegraphics{25.png}}
+\end{figure}
 
 
 \section{Stable release and Download}

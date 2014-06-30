@@ -10,59 +10,59 @@
 \contentsline {subsection}{\numberline {1.1.2}Prerequisites}{4}{subsection.1.1.2}
 \contentsline {subsubsection}{Java 6 JDK}{4}{subsubsection*.8}
 \contentsline {paragraph}{Note:}{4}{paragraph*.9}
-\contentsline {subsubsection}{Adding a dedicated Hadoop system user}{4}{subsubsection*.10}
-\contentsline {subsubsection}{Configuring SSH}{4}{subsubsection*.11}
-\contentsline {paragraph}{Note:}{5}{paragraph*.12}
-\contentsline {subsection}{\numberline {1.1.3}INSTALLATION}{5}{subsection.1.1.3}
-\contentsline {subsubsection}{Main Installation}{5}{subsubsection*.13}
-\contentsline {subsubsection}{Configuration}{5}{subsubsection*.14}
-\contentsline {paragraph}{hadoop-env.sh}{5}{paragraph*.15}
-\contentsline {paragraph}{conf/{\color {red}\bfseries {}*}-site.xml}{6}{paragraph*.16}
-\contentsline {subsubsection}{Formatting the HDFS filesystem via the NameNode}{7}{subsubsection*.17}
-\contentsline {subsubsection}{Starting your single-node cluster}{7}{subsubsection*.18}
-\contentsline {paragraph}{Errors:}{7}{paragraph*.19}
-\contentsline {subsubsection}{Stopping your single-node cluster}{7}{subsubsection*.20}
-\contentsline {paragraph}{ERROR POINTS:}{7}{paragraph*.21}
-\contentsline {paragraph}{Note:}{7}{paragraph*.22}
-\contentsline {section}{\numberline {1.2}MULTI-NODE INSTALLATION}{8}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Running Hadoop on Ubuntu Linux (Multi-Node Cluster)}{8}{subsection.1.2.1}
-\contentsline {subsubsection}{From single-node clusters to a multi-node cluster}{8}{subsubsection*.23}
-\contentsline {subsection}{\numberline {1.2.2}Prerequisites}{8}{subsection.1.2.2}
-\contentsline {subsection}{\numberline {1.2.3}Networking}{8}{subsection.1.2.3}
-\contentsline {subsection}{\numberline {1.2.4}SSH access}{8}{subsection.1.2.4}
-\contentsline {subsection}{\numberline {1.2.5}Hadoop}{9}{subsection.1.2.5}
-\contentsline {subsubsection}{Cluster Overview}{9}{subsubsection*.24}
-\contentsline {subsubsection}{Configuration}{9}{subsubsection*.25}
-\contentsline {paragraph}{conf/masters}{9}{paragraph*.26}
-\contentsline {paragraph}{conf/slaves}{9}{paragraph*.27}
-\contentsline {paragraph}{conf/{\color {red}\bfseries {}*}-site.xml (all machines)}{9}{paragraph*.28}
-\contentsline {paragraph}{conf/mapred-site.xml}{10}{paragraph*.29}
-\contentsline {paragraph}{conf/hdfs-site.xml}{10}{paragraph*.30}
-\contentsline {paragraph}{conf/hdfs-site.xml (ALL machines)}{10}{paragraph*.31}
-\contentsline {subsubsection}{Formatting the HDFS filesystem via the NameNode}{10}{subsubsection*.32}
-\contentsline {subsubsection}{Starting the multi-node cluster}{10}{subsubsection*.33}
-\contentsline {subsubsection}{Stopping the multi-node cluster}{11}{subsubsection*.34}
-\contentsline {paragraph}{ERROR POINTS:}{11}{paragraph*.35}
-\contentsline {chapter}{\numberline {2}HIVE INSTALLATION}{13}{chapter.2}
-\contentsline {section}{\numberline {2.1}INTRODUCTION}{13}{section.2.1}
-\contentsline {section}{\numberline {2.2}Hive Installation}{13}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Installing HIVE:}{13}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Setting Hive environment variable:}{13}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Setting HADOOP\_PATH in HIVE config.sh}{14}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Create Hive directories within HDFS}{14}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}Setting READ/WRITE permission for table}{14}{subsection.2.2.5}
-\contentsline {subsection}{\numberline {2.2.6}HIVE launch}{14}{subsection.2.2.6}
-\contentsline {subsubsection}{OUTPUT ::}{14}{subsubsection*.36}
-\contentsline {subsection}{\numberline {2.2.7}Creating a database}{14}{subsection.2.2.7}
-\contentsline {subsection}{\numberline {2.2.8}Configuring hive-site.xml:}{15}{subsection.2.2.8}
-\contentsline {subsection}{\numberline {2.2.9}Writing a Script}{15}{subsection.2.2.9}
-\contentsline {chapter}{\numberline {3}SQOOP INSTALLATION}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}INTRODUCTION}{17}{section.3.1}
-\contentsline {section}{\numberline {3.2}Stable release and Download}{17}{section.3.2}
-\contentsline {section}{\numberline {3.3}Prerequisites}{17}{section.3.3}
-\contentsline {section}{\numberline {3.4}Installation}{17}{section.3.4}
-\contentsline {chapter}{\numberline {4}IMPORTING DATA FROM HADOOP TO MYSQL}{19}{chapter.4}
-\contentsline {section}{\numberline {4.1}Steps to install mysql}{19}{section.4.1}
-\contentsline {section}{\numberline {4.2}Using sqoop to perform import to hadoop from sql}{19}{section.4.2}
-\contentsline {section}{\numberline {4.3}Error points}{19}{section.4.3}
-\contentsline {chapter}{\numberline {5}Indices and tables}{21}{chapter.5}
+\contentsline {subsubsection}{Adding a dedicated Hadoop system user}{5}{subsubsection*.10}
+\contentsline {subsubsection}{Configuring SSH}{5}{subsubsection*.11}
+\contentsline {paragraph}{Note:}{6}{paragraph*.12}
+\contentsline {subsection}{\numberline {1.1.3}INSTALLATION}{6}{subsection.1.1.3}
+\contentsline {subsubsection}{Main Installation}{6}{subsubsection*.13}
+\contentsline {subsubsection}{Configuration}{7}{subsubsection*.14}
+\contentsline {paragraph}{hadoop-env.sh}{7}{paragraph*.15}
+\contentsline {paragraph}{conf/{\color {red}\bfseries {}*}-site.xml}{7}{paragraph*.16}
+\contentsline {subsubsection}{Formatting the HDFS filesystem via the NameNode}{8}{subsubsection*.17}
+\contentsline {subsubsection}{Starting your single-node cluster}{8}{subsubsection*.18}
+\contentsline {paragraph}{Errors:}{9}{paragraph*.19}
+\contentsline {subsubsection}{Stopping your single-node cluster}{9}{subsubsection*.20}
+\contentsline {paragraph}{ERROR POINTS:}{9}{paragraph*.21}
+\contentsline {paragraph}{Note:}{9}{paragraph*.22}
+\contentsline {section}{\numberline {1.2}MULTI-NODE INSTALLATION}{10}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Running Hadoop on Ubuntu Linux (Multi-Node Cluster)}{10}{subsection.1.2.1}
+\contentsline {subsubsection}{From single-node clusters to a multi-node cluster}{10}{subsubsection*.23}
+\contentsline {subsection}{\numberline {1.2.2}Prerequisites}{10}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Networking}{10}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}SSH access}{10}{subsection.1.2.4}
+\contentsline {subsection}{\numberline {1.2.5}Hadoop}{12}{subsection.1.2.5}
+\contentsline {subsubsection}{Cluster Overview}{12}{subsubsection*.24}
+\contentsline {subsubsection}{Configuration}{12}{subsubsection*.25}
+\contentsline {paragraph}{conf/masters}{12}{paragraph*.26}
+\contentsline {paragraph}{conf/slaves}{12}{paragraph*.27}
+\contentsline {paragraph}{conf/{\color {red}\bfseries {}*}-site.xml (all machines)}{13}{paragraph*.28}
+\contentsline {paragraph}{conf/mapred-site.xml}{13}{paragraph*.29}
+\contentsline {paragraph}{conf/hdfs-site.xml}{14}{paragraph*.30}
+\contentsline {paragraph}{conf/hdfs-site.xml (ALL machines)}{14}{paragraph*.31}
+\contentsline {subsubsection}{Formatting the HDFS filesystem via the NameNode}{15}{subsubsection*.32}
+\contentsline {subsubsection}{Starting the multi-node cluster}{15}{subsubsection*.33}
+\contentsline {subsubsection}{Stopping the multi-node cluster}{16}{subsubsection*.34}
+\contentsline {paragraph}{ERROR POINTS:}{16}{paragraph*.35}
+\contentsline {chapter}{\numberline {2}HIVE INSTALLATION}{19}{chapter.2}
+\contentsline {section}{\numberline {2.1}INTRODUCTION}{19}{section.2.1}
+\contentsline {section}{\numberline {2.2}Hive Installation}{19}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Installing HIVE:}{19}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Setting Hive environment variable:}{19}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Setting HADOOP\_PATH in HIVE config.sh}{20}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Create Hive directories within HDFS}{20}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Setting READ/WRITE permission for table}{20}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}HIVE launch}{20}{subsection.2.2.6}
+\contentsline {subsubsection}{OUTPUT}{20}{subsubsection*.36}
+\contentsline {subsection}{\numberline {2.2.7}Creating a database}{20}{subsection.2.2.7}
+\contentsline {subsection}{\numberline {2.2.8}Configuring hive-site.xml:}{21}{subsection.2.2.8}
+\contentsline {subsection}{\numberline {2.2.9}Writing a Script}{21}{subsection.2.2.9}
+\contentsline {chapter}{\numberline {3}SQOOP INSTALLATION}{23}{chapter.3}
+\contentsline {section}{\numberline {3.1}INTRODUCTION}{23}{section.3.1}
+\contentsline {section}{\numberline {3.2}Stable release and Download}{23}{section.3.2}
+\contentsline {section}{\numberline {3.3}Prerequisites}{24}{section.3.3}
+\contentsline {section}{\numberline {3.4}Installation}{24}{section.3.4}
+\contentsline {chapter}{\numberline {4}IMPORTING DATA FROM HADOOP TO MYSQL}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}Steps to install mysql}{25}{section.4.1}
+\contentsline {section}{\numberline {4.2}Using sqoop to perform import to hadoop from sql}{25}{section.4.2}
+\contentsline {section}{\numberline {4.3}Error points}{25}{section.4.3}
+\contentsline {chapter}{\numberline {5}Indices and tables}{27}{chapter.5}

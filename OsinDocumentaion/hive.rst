@@ -68,6 +68,7 @@ Below this write the following ::
 
 Create Hive directories within HDFS
 ===================================
+
 Command ::
 
     user@ubuntu:~$   hadoop fs -mkdir /usr/hive/warehouse
@@ -75,12 +76,14 @@ Command ::
 
 Setting READ/WRITE permission for table
 ========================================
+
 Command ::
 
     user@ubuntu:~$  hadoop fs -chmod g+w /usr/hive/warehouse
 
 HIVE launch
 ============
+
 Command ::
 
     user@ubuntu:~$  hive
@@ -88,8 +91,9 @@ Command ::
 
 Hive shell will prompt:
 
-OUTPUT ::
----------
+OUTPUT
+------
+
 Shell will look like ::
 
     Logging initialized using configuration in jar:file:/usr/lib/hive/apache-hive-0.13.0-bin/lib/hive- common-0.13.0.jar!/hive-log4j.properties
@@ -97,6 +101,7 @@ Shell will look like ::
 
 Creating a database
 ===================
+
 Command ::
 
     hive> create database mydb;

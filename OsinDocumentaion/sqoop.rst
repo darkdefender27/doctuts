@@ -11,6 +11,13 @@ INTRODUCTION
 - Sqoop is a tool designed to transfer data between Hadoop and relational databases.
 - You can use Sqoop to import data from a relational database management system (RDBMS) such as MySQL or Oracle into the Hadoop Distributed File System (HDFS), transform the data in Hadoop MapReduce, and then export the data back into an RDBMS. Sqoop automates most of this process, relying on the database to describe the schema for the data to be imported. Sqoop uses MapReduce to import and export the data, which provides parallel operation as well as fault tolerance. This document describes how to get started using Sqoop to move data between databases and Hadoop and provides reference information for the operation of the Sqoop command-line tool suite.
 
+.. figure:: _static/images/25.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
 Stable release and Download
 ===========================
 

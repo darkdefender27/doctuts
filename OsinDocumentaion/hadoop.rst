@@ -49,9 +49,24 @@ Update the source list ::
 
     user@ubuntu:~$  sudo apt-get update
 
+.. figure:: _static/images/1.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
 or
 
 Install Sun Java 6 JDK
+
+.. figure:: _static/images/2.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
 
 Note:
 +++++
@@ -75,6 +90,21 @@ We will use a dedicated Hadoop user account for running Hadoop. ::
     user@ubuntu:~$ sudo addgroup hadoop_group
     user@ubuntu:~$ sudo adduser --ingroup hadoop_group hduser1
 
+.. figure:: _static/images/3.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
+.. figure:: _static/images/4.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
+
 This will add the user hduser1 and the group hadoop_group to the local machine.
 Add hduser1 to the sudo group ::
 
@@ -92,6 +122,13 @@ We have to generate an SSH key for the hduser user. ::
     user@ubuntu:~$ su – hduser1
     hduser1@ubuntu:~$ ssh-keygen -t rsa -P ""
 
+.. figure:: _static/images/5.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
 
 The second line will create an RSA key pair with an empty password.
 
@@ -107,6 +144,14 @@ The final step is to test the SSH setup by connecting to the local machine with 
 The step is also needed to save your local machine’s host key fingerprint to the hduser user’s known hosts file. ::
 
     hduser@ubuntu:~$ ssh localhost
+
+.. figure:: _static/images/6.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
 
 If the SSH connection fails, we can try the following (optional):
 
@@ -217,6 +262,12 @@ Run the command ::
 
     hduser@ubuntu:~$ /usr/local/hadoop/bin/hadoop namenode –format
 
+.. figure:: _static/images/7.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
 
 Starting your single-node cluster
 ---------------------------------
@@ -232,6 +283,14 @@ Run the command ::
 This will startup a Namenode, Datanode, Jobtracker and a Tasktracker on the machine. ::
 
     hduser@ubuntu:/usr/local/hadoop$ jps
+
+.. figure:: _static/images/8.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
 
 Errors:
 +++++++
@@ -280,6 +339,14 @@ From single-node clusters to a multi-node cluster
 
 We will build a multi-node cluster merge two or more single-node clusters into one multi-node cluster in which one Ubuntu box will become the designated master but also act as a slave , and the other box will become only a slave.
 
+.. figure:: _static/images/9.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
+
 Prerequisites
 =============
 
@@ -303,6 +370,14 @@ Networking
      10.105.15.78    master  (IP address of the master node)
      10.105.15.43    slave1   (IP address of the slave node)
 
+.. figure:: _static/images/10.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
+
 SSH access
 ==========
 The hduser user on the master (aka hduser@master) must be able to connect:
@@ -314,15 +389,39 @@ The hduser user on the master (aka hduser@master) must be able to connect:
 
     hduser@master:~$  ssh-copy-id -i $HOME/.ssh/id_rsa.pub hduser@slave1
 
+.. figure:: _static/images/11.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
+
 - Connect with user hduser from the master to the user account hduser on the slave.
 
 1. From master to master ::
 
     hduser@master:~$  ssh master
 
+.. figure:: _static/images/12.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
+
 2. From master to slave ::
 
     hduser@master:~$  ssh slave1
+
+.. figure:: _static/images/13.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
 
 Hadoop
 ======
@@ -343,28 +442,44 @@ This file should be updated on all the nodes. Open the masters file in the conf 
     hduser@master/slave :~$ sudo gedit masters
 
 
+
 Add the following line ::
 
     Master
+
+.. figure:: _static/images/14.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
 
 conf/slaves
 +++++++++++
 This file should be updated on all the nodes as master is also a slave.
 Open the slaves file in the conf directory ::
 
-    hduser@master/slave :~$ /usr/local/hadoop/conf$ sudo gedit slaves
+    hduser@master/slave:~/usr/local/hadoop/conf$ sudo gedit slaves
 
 Add the following lines ::
 
     Master
     Slave1
 
+.. figure:: _static/images/15.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
 conf/*-site.xml (all machines)
 ++++++++++++++++++++++++++++++
 
 Open this file in the conf directory ::
 
-    hduser@master:~$ /usr/local/hadoop/conf$ sudo gedit core-site.xml
+    hduser@master:~/usr/local/hadoop/conf$ sudo gedit core-site.xml
 
 Change the fs.default.name parameter (in conf/core-site.xml), which specifies the NameNode (the HDFS master) host and port.
 
@@ -379,6 +494,14 @@ conf/core-site.xml (ALL machines .ie. Master as well as slave) ::
         the FileSystem implementation class.  The uri's authority is used to
         determine the host, port, etc. for a filesystem.</description>
     </property>
+
+.. figure:: _static/images/16.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
 
 conf/mapred-site.xml
 ++++++++++++++++++++
@@ -401,6 +524,14 @@ conf/mapred-site.xml (ALL machines) ::
         and reduce task.
         </description>
     </property>
+
+
+.. figure:: _static/images/17.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
 
 
 conf/hdfs-site.xml
@@ -430,12 +561,27 @@ Changes to be made ::
     </property>
 
 
+.. figure:: _static/images/18.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
+
 Formatting the HDFS filesystem via the NameNode
 -----------------------------------------------
 
 Format the cluster’s HDFS file system ::
 
-    hduser@master:~$  /usr/local/hadoop$ bin/hadoop namenode -format
+    hduser@master:~/usr/local/hadoop$ bin/hadoop namenode -format
+
+.. figure:: _static/images/19.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
 
 
 Starting the multi-node cluster
@@ -452,6 +598,14 @@ Cluster is started by running the commnd on master ::
     hduser@master:~$   /usr/local/hadoop
     hduser@master:~$   bin/start-all.sh
 
+.. figure:: _static/images/20.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
+
 By this command:
 
 - The NameNode daemon is started on master, and DataNode daemons are started on all slaves (here: master and slave).
@@ -462,9 +616,24 @@ To check the daemons running , run the following commands ::
 
     hduser@master:~$  jps
 
+.. figure:: _static/images/21.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
+
+
 On slave, datanode and jobtracker should run. ::
 
-    hduser@slave:~$  /usr/local/hadoop$ jps
+    hduser@slave:~/usr/local/hadoop$ jps
+
+.. figure:: _static/images/22.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
 
 
 Stopping the multi-node cluster
@@ -472,8 +641,15 @@ Stopping the multi-node cluster
 
 To stop the multinode cluster , run the following command on master pc ::
 
-    hduser@master:~$   /usr/local/hadoop
-    hduser@master:~$   bin/stop-all.sh
+    hduser@master:~$ cd /usr/local/hadoop
+    hduser@master:~/usr/local/hadoop$ bin/stop-all.sh
+
+.. figure:: _static/images/23.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
 
 
 ERROR POINTS:
@@ -497,5 +673,13 @@ ERROR POINTS:
     - This command deletes the junk files which gets stored in tmp folder of hadoop ::
 
         hduser@master:~$  sudo rm -Rf /app/hadoop/tmp/*
+
+
+.. figure:: _static/images/24.png
+   :height: 700 px
+   :width: 1000 px
+   :scale: 50 %
+   :alt: Use case diagram of the Ticketing System
+   :align: center
 
 
