@@ -37,11 +37,11 @@ To install the sqoop 1.4.4 we followed the given sequence of steps :
 1.  Download the sqoop-1.4.4.bin_hadoop-1.0.0.tar.gz  file from
     www.apache.org/dyn/closer.cgl/sqoop/1.4.4
 
-2.  Unzip the tar ?le: sudo tar -zxvf sqoop-1.4.4.bin hadoop1.0.0.tar.gz
+2.  Unzip the tar file: sudo tar -zxvf sqoop-1.4.4.bin hadoop1.0.0.tar.gz
 
 3.  Move sqoop-1.4.4.bin hadoop1.0.0 to sqoop using command ::
 
-    user@ubuntu:~$  sudo mv sqoop  1.4.4.bin hadoop1.0.0 /usr/local/sqoop
+    user@ubuntu:~$  sudo mv sqoop  1.4.4.bin hadoop1.0.0 /usr/lib/sqoop
 
 4.  Create a directory sqoop in usr/lib using command ::
 
@@ -55,7 +55,7 @@ To install the sqoop 1.4.4 we followed the given sequence of steps :
 
     user@ubuntu:~$  cd
 
-7.  Open bashrc file using ::
+7.  Open .bashrc file using ::
 
     user@ubuntu:~$  sudo gedit ~/.bashrc
 
