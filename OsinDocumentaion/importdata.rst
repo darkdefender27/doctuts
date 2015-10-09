@@ -31,7 +31,7 @@ Using sqoop to perform import to hadoop from sql
     user@ubuntu:~$ sqoop import -connect jdbc:mysql://localhost:3306/sqoop -username root -pasword abc -table employees -m
 
 
-This command imports the employees table from the sqoop directory of myql to hdfs.
+This command imports the employees table from the sqoop directory of mysql to hdfs.
 
 Error points
 ============
@@ -50,7 +50,7 @@ and again run the command ::
 
 and confirm that you are getting safemode is off.
 
-2. Do make sure that haoop is running before performing the import action.
+2. Do make sure that hadoop is running before performing the import action.
 
 
 
