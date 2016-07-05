@@ -87,7 +87,7 @@ Adding a dedicated Hadoop system user
 
 We will use a dedicated Hadoop user account for running Hadoop. ::
 
-    user@ubuntu:~$ sudo addgroup hadoop_group
+    user@ubuntu:~$ sudo groupadd hadoop_group
     user@ubuntu:~$ sudo adduser --ingroup hadoop_group hduser1
 
 .. figure:: _static/images/3.png
@@ -117,7 +117,7 @@ The hadoop control scripts rely on SSH to peform cluster-wide operations. For ex
 
 Hadoop requires SSH access to manage its nodes, i.e. remote machines plus your local machine. For our single-node setup of Hadoop, we therefore need to configure SSH access to localhost for the hduser user we created in the earlier.
 
-We have to generate an SSH key for the hduser user. ::
+We have to generate an SSH key for the hduser1 user. ::
 
     user@ubuntu:~$ su – hduser1
     hduser1@ubuntu:~$ ssh-keygen -t rsa -P ""
@@ -164,7 +164,7 @@ INSTALLATION
 Main Installation
 -----------------
 
-- Now, I will start by switching to hduser ::
+- Now, I will start by switching to hduser1 ::
 
     hduser@ubuntu:~$ su - hduser1
 
@@ -278,7 +278,8 @@ Before starting the cluster, we need to give the required permissions to the dir
 
 Run the command ::
 
-    hduser@ubuntu:~$ /usr/local/hadoop/bin/start-all.sh
+    hduser@ubuntu:~$ /usr/local/hadoop/bin/start-dfs.sh
+    hduser@ubuntu:~$ /usr/local/hadoop/bin/start-yarn.sh
 
 This will startup a Namenode, Datanode, Jobtracker and a Tasktracker on the machine. ::
 
@@ -312,7 +313,8 @@ Stopping your single-node cluster
 
 Run the command to stop all the daemons running on your machine. ::
 
-    hduser@ubuntu:~$ /usr/local/hadoop/bin/stop-all.sh
+    hduser@ubuntu:~$ /usr/local/hadoop/bin/stop-yarn.sh
+    hduser@ubuntu:~$ /usr/local/hadoop/bin/stop-dfs.sh
 
 ERROR POINTS:
 +++++++++++++
